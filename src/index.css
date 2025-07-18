@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for blog content */
+.blog-content {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.blog-content h1 {
+  @apply text-3xl font-bold text-gray-900 mt-8 mb-4;
+}
+
+.blog-content h2 {
+  @apply text-2xl font-bold text-gray-900 mt-8 mb-4;
+}
+
+.blog-content h3 {
+  @apply text-xl font-semibold text-gray-900 mt-6 mb-3;
+}
+
+.blog-content h4 {
+  @apply text-lg font-semibold text-gray-900 mt-4 mb-2;
+}
+
+.blog-content p {
+  @apply mb-4 leading-relaxed;
+}
+
+.blog-content ul {
+  @apply mb-6 space-y-2;
+}
+
+.blog-content ol {
+  @apply mb-6 space-y-2;
+}
+
+.blog-content li {
+  @apply text-gray-700;
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-purple-500 bg-purple-50 p-4 rounded-r-lg mb-6 italic;
+}
+
+.blog-content blockquote p {
+  @apply text-purple-900 mb-0;
+}
+
+.blog-content img {
+  @apply rounded-lg shadow-md mb-6;
+}
+
+.blog-content a {
+  @apply text-purple-600 hover:text-purple-700 underline;
+}
+
+.blog-content strong {
+  @apply font-semibold text-gray-900;
+}
+
+.blog-content code {
+  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+}
+
+.blog-content pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6;
+}
+
+.blog-content table {
+  @apply w-full border-collapse border border-gray-300 mb-6;
+}
+
+.blog-content th,
+.blog-content td {
+  @apply border border-gray-300 px-4 py-2 text-left;
+}
+
+.blog-content th {
+  @apply bg-gray-50 font-semibold;
+}
+
+/* Product-specific blog styles */
+.product-hero {
+  background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+}
+
+.product-hero img {
+  filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.3));
+}
+
+/* Enhanced card styles for product reviews */
+.blog-content .bg-gradient-to-br {
+  background: linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to));
+}
+
+/* Price comparison table styles */
+.blog-content .price-table {
+  @apply bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm;
+}
+
+.blog-content .price-row {
+  @apply px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors;
+}
+
+/* Benchmark progress bars */
+.blog-content .benchmark-bar {
+  @apply w-full bg-gray-200 rounded-full h-2 overflow-hidden;
+}
+
+.blog-content .benchmark-fill {
+  @apply h-full rounded-full transition-all duration-500 ease-out;
+}
+
+/* Rating stars */
+.rating-stars {
+  @apply flex items-center space-x-1;
+}
+
+.rating-star {
+  @apply h-5 w-5 text-yellow-400;
+}
+
+.rating-star.filled {
+  @apply fill-current;
+}
+
+/* Deal badges */
+.deal-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
+}
+
+.deal-badge.best {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.deal-badge.great {
+  @apply bg-green-100 text-green-800;
+}
+
+.deal-badge.good {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+/* Pros and cons lists */
+.pros-cons-grid {
+  @apply grid md:grid-cols-2 gap-6 mb-8;
+}
+
+.pros-list {
+  @apply bg-green-50 border border-green-200 rounded-xl p-6;
+}
+
+.cons-list {
+  @apply bg-red-50 border border-red-200 rounded-xl p-6;
+}
+
+.pros-cons-item {
+  @apply flex items-start space-x-3 mb-3 last:mb-0;
+}
+
+/* Call-to-action buttons */
+.cta-button {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105;
+}
+
+.cta-button-secondary {
+  @apply border border-white/30 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors;
+}
+
+/* Responsive images */
+.blog-content img {
+  @apply max-w-full h-auto;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  @apply outline-none ring-2 ring-purple-500 ring-offset-2;
+}
+
+/* Animation for loading states */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Card shadows */
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Typography improvements */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Enhanced animations for product reviews */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in-scale {
+  animation: fadeInScale 0.5s ease-out;
+}
+
+/* Product image hover effects */
+.product-image {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Price highlight animation */
+@keyframes priceHighlight {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(34, 197, 94, 0.1); }
+  100% { background-color: transparent; }
+}
+
+.price-highlight {
+  animation: priceHighlight 2s ease-in-out;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .blog-content {
+    @apply text-black;
+  }
+  
+  .blog-content a {
+    @apply text-black no-underline;
+  }
+  
+  .blog-content a::after {
+    content: " (" attr(href) ")";
+    @apply text-sm text-gray-600;
+  }
+  
+  .product-hero {
+    background: #f3f4f6 !important;
+    color: #000 !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .blog-content {
+    @apply text-base;
+  }
+  
+  .blog-content h1 {
+    @apply text-2xl;
+  }
+  
+  .blog-content h2 {
+    @apply text-xl;
+  }
+  
+  .blog-content h3 {
+    @apply text-lg;
+  }
+  
+  .product-hero {
+    @apply p-6;
+  }
+  
+  .pros-cons-grid {
+    @apply grid-cols-1;
+  }
+}
