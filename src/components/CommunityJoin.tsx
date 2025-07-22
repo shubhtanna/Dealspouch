@@ -6,52 +6,64 @@ const CommunityJoin = () => {
     {
       name: "WhatsApp Community",
       description: "Join our exclusive deals community",
-      members: "25K+ Members",
+      // members: "25K+ Members",
       icon: MessageCircle,
       color: "from-green-500 to-green-600",
       bgColor: "bg-green-50",
       borderColor: "border-green-200",
       textColor: "text-green-700",
       buttonColor: "bg-green-500 hover:bg-green-600",
-      image: "https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop"
+      image: "https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+      link: "https://whatsapp.com/channel/0029Vb75np6DeON5FNggEj0q"
     },
     {
       name: "WhatsApp Channel",
       description: "Get instant deal notifications",
-      members: "50K+ Subscribers",
-      icon: Send,
+      // members: "50K+ Subscribers",
+      icon: Users,
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-200",
       textColor: "text-blue-700",
       buttonColor: "bg-blue-500 hover:bg-blue-600",
-      image: "https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop"
+      image: "https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+      link: "https://chat.whatsapp.com/DjSHeQmtKILGlhFDL6TN4n"
     },
     {
       name: "Twitter Updates",
       description: "Follow for daily deal tweets",
-      members: "15K+ Followers",
+      // members: "15K+ Followers",
       icon: Twitter,
       color: "from-sky-500 to-sky-600",
       bgColor: "bg-sky-50",
       borderColor: "border-sky-200",
       textColor: "text-sky-700",
       buttonColor: "bg-sky-500 hover:bg-sky-600",
-      image: "https://images.pexels.com/photos/5082567/pexels-photo-5082567.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop"
+      image: "https://images.pexels.com/photos/5082567/pexels-photo-5082567.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+      link: "https://x.com/Dealspouch27"
     },
     {
       name: "Telegram Group",
       description: "Real-time deal discussions",
-      members: "30K+ Members",
-      icon: Users,
+      // members: "30K+ Members",
+      icon: Send,
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
       borderColor: "border-purple-200",
       textColor: "text-purple-700",
       buttonColor: "bg-purple-500 hover:bg-purple-600",
-      image: "https://images.pexels.com/photos/5082578/pexels-photo-5082578.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop"
+      image: "https://images.pexels.com/photos/5082578/pexels-photo-5082578.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+      link: "https://t.me/your-telegram-group"
     }
   ];
+
+  const handleJoinClick = (link: string, communityName: string) => {
+    // Track the click event (you can add analytics here)
+    console.log(`Joining ${communityName}`);
+    
+    // Open the link in a new tab
+    window.open(link, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
@@ -92,11 +104,14 @@ const CommunityJoin = () => {
                   {community.description}
                 </p>
 
-                <div className={`${community.textColor} font-semibold text-sm mb-4`}>
+                {/* <div className={`${community.textColor} font-semibold text-sm mb-4`}>
                   {community.members}
-                </div>
+                </div> */}
 
-                <button className={`w-full ${community.buttonColor} text-white py-3 px-4 rounded-xl font-semibold transition-colors flex items-center justify-center space-x-2 group-hover:shadow-lg`}>
+                 <button 
+                  onClick={() => handleJoinClick(community.link, community.name)}
+                  className={`w-full ${community.buttonColor} text-white py-3 px-4 rounded-xl font-semibold transition-colors flex items-center justify-center space-x-2 group-hover:shadow-lg hover:transform hover:scale-105 active:scale-95`}
+                >
                   <IconComponent className="h-4 w-4" />
                   <span>Join Now</span>
                 </button>
@@ -113,11 +128,11 @@ const CommunityJoin = () => {
             <div className="grid md:grid-cols-2 gap-4 text-left">
               <div className="flex items-center space-x-3">
                 <div className="bg-purple-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">✓</div>
-                <span className="text-purple-800">Exclusive early access to deals</span>
+                <span className="text-purple-800">Instant alerts on the products you love.</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-purple-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">✓</div>
-                <span className="text-purple-800">Member-only discount codes</span>
+                <span className="text-purple-800">Your personal watchdog for the best prices online.</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-purple-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">✓</div>
@@ -125,7 +140,7 @@ const CommunityJoin = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="bg-purple-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">✓</div>
-                <span className="text-purple-800">Deal sharing & discussions</span>
+                <span className="text-purple-800">Let the best deals come directly to you</span>
               </div>
             </div>
           </div>

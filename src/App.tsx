@@ -3,10 +3,14 @@ import Header from './components/Header';
 import HeroSlider from './components/HeroSlider';
 import CommunityJoin from './components/CommunityJoin';
 import DealsSlider from './components/DealsSlider';
-import BlogSection from './components/BlogSection';
+// import BlogSection from './components/BlogSection';
 import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 import BlogPostPage from './components/BlogPostPage';
+// import { AmazonProductsSection } from './components/AmazonProductsSection';
+import SimpleTest  from './components/SimpleTest';
+import {AmazonProductsSection}  from './components/AmazonProductsSection';
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'blog'>('home');
@@ -21,9 +25,11 @@ function App() {
       <HeroSlider />
       <CommunityJoin />
       <DealsSlider />
-      <div onClick={() => setCurrentPage('blog')}>
+      {/* <div onClick={() => setCurrentPage('blog')}>
         <BlogSection />
-      </div>
+      </div> */}
+      <AmazonProductsSection/>
+      <SimpleTest />
       <Newsletter />
       <Footer />
     </div>
